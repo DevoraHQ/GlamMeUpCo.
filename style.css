@@ -1,8 +1,8 @@
 body {
-  margin: 0;
-  font-family: "Georgia", serif;
-  background-color: #0f0f0f;
-  color: #f5f5f5;
+    margin: 0;
+    font-family: "Georgia", serif;
+    background-color: #ffffff;
+    color: #111111;
 }
 
 html {
@@ -62,17 +62,16 @@ h2 {
 }
 
 .card {
-    background: #1c1c1c;
-    padding: 20px;
-    width: 280px;
+    background: white;
+    border: 1px solid #f0f0f0;
     border-radius: 12px;
-    border: 1px solid gold;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    padding: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
+    transform: translateY(-8px);
 }
 
 /* CONTACT */
@@ -92,7 +91,8 @@ h2 {
     justify-content: space-between;
     align-items: center;
     padding: 25px 50px;
-    background-color: black;
+    background-color: white;
+    border-bottom: 1px solid #eeeeee;
     position: sticky;
     top: 0;
 }
@@ -100,8 +100,18 @@ h2 {
 .logo {
     font-size: 28px;
     letter-spacing: 3px;
-    color: gold;
+    color: black;
     font-weight: bold;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    color: #e88aa8;
 }
 
 .nav-links {
@@ -109,21 +119,11 @@ h2 {
     list-style: none;
     gap: 30px;
 }
-
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-}
-
-.nav-links a:hover {
-    color: gold;
-}
 footer {
-    background: black;
+    background: #f8f8f8;
+    color: black;
     text-align: center;
     padding: 30px;
-    color: white;
 }
 .hero {
     height: 100vh;
@@ -158,32 +158,29 @@ footer {
 }
 
 .btn {
-    background: gold;
-    color: black;
+    background: #e88aa8;
+    color: white;
     padding: 15px 30px;
-    text-decoration: none;
-    margin-right: 10px;
     border-radius: 30px;
+    text-decoration: none;
     font-weight: bold;
 }
 
-.btn-outline {
-    border: 2px solid gold;
-    color: gold;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 30px;
-    
+.btn:hover {
+    background: #d86f92;
 }
 
-.btn:hover {
-    background: white;
-    transform: scale(1.05);
+.btn-outline {
+    border: 2px solid #e88aa8;
+    color: #e88aa8;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
 }
 
 .btn-outline:hover {
-    background: gold;
-    color: black;
+    background: #e88aa8;
+    color: white;
 }
 
 .contact form {
