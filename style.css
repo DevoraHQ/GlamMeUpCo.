@@ -83,25 +83,32 @@ h2 {
     .shop-grid {
         grid-template-columns: 1fr;
     }
-}
 .card {
     background: white;
     border: 1px solid #eee;
     border-radius: 15px;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
-    transition: 0.3s;
-}
-.card img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-.card:hover {
-    transform: translateY(-8px);
 }
 
+.card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+}
+
+.card p {
+    margin: 0;
+    font-size: 16px;
+    color: #444;
+}
 /* CONTACT */
 .contact {
   background: #fafafa;
@@ -411,6 +418,10 @@ section {
     border-radius: 30px;
     cursor: pointer;
     transition: 0.3s;
+}
+    .add-cart {
+    margin-top: 10px;
+    width: 100%;
 }
 
 .add-cart:hover {
