@@ -349,12 +349,13 @@ section {
 }
 
 .socials a {
-    color: #e88aa8;
+    color: black;
     margin: 0 10px;
     text-decoration: none;
 }
 .add-cart {
-    background: #e88aa8;
+    background: black;
+    color: white
     border: none;
     padding: 12px 20px;
     margin-top: 10px;
@@ -400,6 +401,7 @@ section {
     width: 100%;
     padding: 15px;
     background: black;
+    color: white;
     border: none;
     font-weight: bold;
     margin-top: 20px;
