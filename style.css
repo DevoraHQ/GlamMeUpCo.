@@ -61,11 +61,13 @@ h2 {
 }
 
 /* SHOP GRID */
-.grid {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+.products,
+.grid,
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 40px;
 }
 
 .card {
