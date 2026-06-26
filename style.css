@@ -361,6 +361,18 @@ section {
     border: none;
     margin-left: 10px;
 }
+.newsletter button {
+    background: black;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+.newsletter input {
+    border: 1px solid #ddd;
+    padding: 12px;
+}
 .socials {
     margin-top: 20px;
 }
