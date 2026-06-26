@@ -61,17 +61,25 @@ h2 {
 }
 
 /* SHOP GRID */
+.signature-pieces,
 .products,
-.grid,
 .shop-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
     padding: 40px;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    .signature-pieces,
     .products,
-    .grid,
+    .shop-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .signature-pieces,
+    .products,
     .shop-grid {
         grid-template-columns: 1fr;
     }
