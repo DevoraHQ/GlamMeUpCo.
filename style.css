@@ -70,7 +70,7 @@ h2 {
 
 .card {
     background: white;
-    border: 1px solid #f0f0f0;
+    border: 1px solid black;
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
@@ -374,6 +374,11 @@ section {
     cursor: pointer;
     font-weight: bold;
 }
+.add-cart:hover {
+
+    background: #333;
+
+}
 
 .cart-icon {
     color: black;
@@ -417,6 +422,11 @@ section {
     font-weight: bold;
     margin-top: 20px;
     cursor: pointer;
+}
+.checkout-btn:hover {
+
+    background: #333;
+
 }
 .remove-btn {
     float: right;
