@@ -318,8 +318,8 @@ section {
 }
 
 .booking-form button {
-    background: gold;
-    color: black;
+    background: black;
+    color: white;
     padding: 15px 30px;
     border: none;
     border-radius: 30px;
@@ -340,7 +340,7 @@ section {
 
 .newsletter button {
     padding: 15px 25px;
-    background: gold;
+    background: #e88aa8;
     border: none;
     margin-left: 10px;
 }
@@ -349,12 +349,12 @@ section {
 }
 
 .socials a {
-    color: gold;
+    color: #e88aa8;
     margin: 0 10px;
     text-decoration: none;
 }
 .add-cart {
-    background: gold;
+    background: #e88aa8;
     border: none;
     padding: 12px 20px;
     margin-top: 10px;
@@ -364,7 +364,7 @@ section {
 }
 
 .cart-icon {
-    color: gold;
+    color: black;
     font-size: 22px;
     cursor: pointer;
 }
@@ -393,13 +393,13 @@ section {
 
 .cart-panel li {
     padding: 15px 0;
-    border-bottom: 1px solid gold;
+    border-bottom: 1px solid #e88aa8;
 }
 
 .checkout-btn {
     width: 100%;
     padding: 15px;
-    background: gold;
+    background: black;
     border: none;
     font-weight: bold;
     margin-top: 20px;
@@ -434,7 +434,7 @@ section {
 }
 
 .price {
-    color: gold;
+    color: black;
     font-size: 28px;
 }
 .search-section {
@@ -456,7 +456,7 @@ section {
 }
 
 .filters button {
-    background: gold;
+    background: #e88aa8;
     border: none;
     padding: 12px 20px;
     margin: 5px;
