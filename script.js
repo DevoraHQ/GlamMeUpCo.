@@ -26,10 +26,13 @@ document.querySelectorAll(".add-cart")
 
         const item = document.createElement("li");
 
-item.innerHTML = `
-    ${name} - £${price}
-    <button class="remove-btn">✖</button>
-`;
+        item.appendChild(
+            document.createTextNode(`${name} - £${price} `)
+        );
+        const removeBtn = document.createElement("button");
+        removeBtn.className = "remove-btn";
+        removeBtn.textContent = "✖";
+        item.appendChild(removeBtn);
 
 cartItems.appendChild(item);
 
