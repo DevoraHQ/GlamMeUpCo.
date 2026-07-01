@@ -2,12 +2,18 @@ alert("Welcome to GLAM ME UP — Luxury Bespoke Fashion ✨");
 let total =
     Number(localStorage.getItem("total")) || 0;
 
-totalElement.textContent = total;
-
 const cartItems = document.getElementById("cart-items");
 const totalElement = document.getElementById("cart-total");
 const cartCount = document.getElementById("cart-count");
 const cartPanel = document.getElementById("cart-panel");
+
+let total =
+
+    Number(localStorage.getItem("total")) || 0;
+
+if (totalElement) {
+    totalElement.textContent = total;
+}
 
 document.querySelector(".cart-icon")
 .addEventListener("click", () => {
