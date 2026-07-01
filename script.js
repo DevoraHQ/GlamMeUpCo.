@@ -1,124 +1,91 @@
-alert("Welcome to GLAM ME UP — Luxury Bespoke Fashion ✨");
+document.addEventListener("DOMContentLoaded", () => {
 
-    totalElement.textContent = total;
+    /* =========================
+       🌟 WELCOME MESSAGE
+    ========================== */
 
-document.querySelector(".cart-icon")
-.addEventListener("click", () => {
-    cartPanel.classList.toggle("open");
-});
+    alert("Welcome to GLAM ME UP CO— Luxury Bespoke Fashion");
 
-document.querySelectorAll(".add-cart")
-.forEach(button => {
+    /* =========================
+       🔍 SEARCH FUNCTION
+    ========================== */
 
-    button.addEventListener("click", () => {
+    const searchInput = document.getElementById("searchInput");
+    const clearBtn = document.getElementById("clearSearch");
+    const products = document.querySelectorAll(".product-card");
+    const noResults = document.getElementById("noResults");
 
-        const name = button.dataset.name;
-        const price = Number(button.dataset.price);
+    function filterProducts() {
 
-        total += price;
+        if (!searchInput) return;
 
-        const item = document.createElement("li");
+        const value = searchInput.value.toLowerCase().trim();
 
-        item.appendChild(
-            document.createTextNode(`${name} - £${price} `)
-        );
-        const removeBtn = document.createElement("button");
-        removeBtn.className = "remove-btn";
-        removeBtn.textContent = "✖";
-        item.appendChild(removeBtn);
-
-cartItems.appendChild(item);
-
-item.querySelector(".remove-btn")
-.addEventListener("click", () => {
-
-    total -= price;
-
-    totalElement.textContent = total;
-
-    item.remove();
-
-    cartCount.textContent =
-        cartItems.children.length;
-});
-const cartItems = document.getElementById("cart-items");
-const totalElement = document.getElementById("cart-total");
-const cartCount = document.getElementById("cart-count");
-const cartPanel = document.getElementById("cart-panel");
-
-let total =
-
-    Number(localStorage.getItem("total")) || 0;
-
-if (totalElement) {
-        totalElement.textContent = total;
-
-        cartCount.textContent =
-            cartItems.children.length;
-    });
-
-});
-localStorage.setItem("total", total);
-
-document.querySelector(".checkout-btn")
-.addEventListener("click", () => {
-
-    alert(
-        "Thank you for shopping with GLAM ME UP. Online payment coming soon."
-    );
-
-});
-
-const searchInput = document.getElementById("searchInput");
-const clearBtn = document.getElementById("clearSearch");
-const products = document.querySelectorAll(".product-card");
-const noResults = document.getElementById("noResults");
-
-function filterProducts() {
-
-    const search = searchInput.value.toLowerCase().trim();
-
-    let found = 0;
-
-    products.forEach(product => {
-
-        const keywords = product.dataset.search.toLowerCase();
-
-        if (keywords.includes(search)) {
-
-            product.style.display = "block";
-            product.style.border = "2px solid #E8A3B5";
-            found++;
-
-        } else {
-
-            product.style.display = "none";
-
-        }
-
-    });
-
-    if (search === "") {
+        let found = 0;
 
         products.forEach(product => {
 
-            product.style.display = "block";
-            product.style.border = "1px solid #eee";
+            const keywords = product.getAttribute("data-search");
+
+            if (!keywords) return;
+
+            if (keywords.toLowerCase().includes(value)) {
+                product.style.display = "block";
+                found++;
+            } else {
+                product.style.display = "none";
+            }
 
         });
 
+        // Reset view if empty search
+        if (value === "") {
+            products.forEach(product => {
+                product.style.display = "block";
+            });
+        }
+
+        // No results message
+        if (noResults) {
+            noResults.style.display =
+                (found === 0 && value !== "") ? "block" : "none";
+        }
     }
 
-    noResults.style.display =
-        (found === 0 && search !== "") ? "block" : "none";
+    if (searchInput) {
+        searchInput.addEventListener("input", filterProducts);
+    }
 
-}
+    if (clearBtn) {
+        clearBtn.addEventListener("click", () => {
+            searchInput.value = "";
+            filterProducts();
+        });
+    }
 
-searchInput.addEventListener("input", filterProducts);
+    /* =========================
+       🛒 SIMPLE CART (SAFE VERSION)
+       ========================= */
 
-clearBtn.addEventListener("click", () => {
+    const cartCount = document.getElementById("cart-count");
+    let count = 0;
 
-    searchInput.value = "";
+    document.querySelectorAll(".add-cart").forEach(button => {
+        button.addEventListener("click", () => {
 
-    filterProducts();
-}
+            count++;
+
+            if (cartCount) {
+                cartCount.textContent = count;
+            }
+
+            button.textContent = "Added ✓";
+
+            setTimeout(() => {
+                button.textContent = "Add to Cart";
+            }, 1000);
+
+        });
+    });
+
+});
