@@ -811,3 +811,32 @@ section {
 .newsletter-box button:hover{
     background:#333;
 }
+.search-box{
+    display:flex;
+    align-items:center;
+    border:1px solid #ddd;
+    border-radius:30px;
+    overflow:hidden;
+    background:white;
+}
+
+.search-box input{
+    border:none;
+    padding:8px 12px;
+    outline:none;
+    width:180px;
+    font-size:14px;
+}
+
+.search-box button{
+    border:none;
+    background:#111;
+    color:white;
+    padding:8px 12px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.search-box button:hover{
+    background:#333;
+}
