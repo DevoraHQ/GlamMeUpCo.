@@ -647,3 +647,8 @@ section {
     color:#555;
     line-height:1.6;
 }
+@media(max-width:900px){
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+}
