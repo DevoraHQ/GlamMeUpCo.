@@ -119,7 +119,4 @@ clearBtn.addEventListener("click", () => {
     searchInput.value = "";
 
     filterProducts();
-
-});
-
 }
