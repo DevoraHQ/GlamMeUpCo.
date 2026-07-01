@@ -842,6 +842,6 @@ section {
 }
 @media(max-width:900px){
     .search-box{
-        display:none;
+        display:flex;
     }
 }
