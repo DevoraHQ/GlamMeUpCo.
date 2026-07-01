@@ -840,3 +840,8 @@ section {
 .search-box button:hover{
     background:#333;
 }
+@media(max-width:900px){
+    .search-box{
+        display:none;
+    }
+}
