@@ -575,3 +575,8 @@ section {
     background:black;
     color:white;
 }
+@media(max-width:900px){
+    .product-grid{
+        grid-template-columns:1fr;
+    }
+}
