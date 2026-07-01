@@ -793,7 +793,7 @@ section {
 .newsletter-box input{
     padding:15px;
     width:300px;
-    border:1px solid #ddd;
+    border:1px solid pink;
     border-radius:30px;
     outline:none;
 }
