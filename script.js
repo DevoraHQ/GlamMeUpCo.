@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const clearBtn = document.getElementById("clearSearch");
     const products = document.querySelectorAll(".product-card");
     const noResults = document.getElementById("noResults");
-
+   
     function filterProducts() {
 
         if (!searchInput) return;
@@ -53,17 +53,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     const searchBtn = document.querySelector(".search-box button[type='button']");
     
+    const searchBtn = document.getElementById("searchBtn");
+    
     if (searchBtn) {
     searchBtn.addEventListener("click", () => {
-        searchInput.focus();
         filterProducts();
-    });
-}
-    searchInput.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-        filterProducts();
+        });
     }
-});
+    if (searchInput) {
+        searchInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+            filterProducts();
+            }
+        });
+    }
 
     if (searchInput) {
         searchInput.addEventListener("input", filterProducts);
