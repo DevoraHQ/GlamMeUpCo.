@@ -776,3 +776,38 @@ section {
 .booking-form button:hover{
     background:#333;
 }
+.newsletter{
+    padding:120px 10%;
+    background:white;
+    text-align:center;
+}
+
+.newsletter-box{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:40px;
+    flex-wrap:wrap;
+}
+
+.newsletter-box input{
+    padding:15px;
+    width:300px;
+    border:1px solid #ddd;
+    border-radius:30px;
+    outline:none;
+}
+
+.newsletter-box button{
+    padding:15px 25px;
+    border:none;
+    border-radius:30px;
+    background:black;
+    color:white;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.newsletter-box button:hover{
+    background:#333;
+}
