@@ -66,10 +66,7 @@ document.querySelector(".checkout-btn")
     );
 
 });
-const searchInput = document.getElementById("searchInput");
-const clearBtn = document.getElementById("clearSearch");
-const products = document.querySelectorAll(".product-card");
-const noResults = document.getElementById("noResults");
+
 
 function filterProducts() {
 
