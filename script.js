@@ -51,6 +51,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 (found === 0 && value !== "") ? "block" : "none";
         }
     }
+    const searchBtn = document.querySelector(".search-box button[type='button']");
+    
+    if (searchBtn) {
+    searchBtn.addEventListener("click", () => {
+        searchInput.focus();
+        filterProducts();
+    });
+}
+    searchInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+        filterProducts();
+    }
+});
 
     if (searchInput) {
         searchInput.addEventListener("input", filterProducts);
