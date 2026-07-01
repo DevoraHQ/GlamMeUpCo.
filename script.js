@@ -66,33 +66,60 @@ document.querySelector(".checkout-btn")
     );
 
 });
-const searchInput =
-    document.getElementById("searchInput");
+const searchInput = document.getElementById("searchInput");
+const clearBtn = document.getElementById("clearSearch");
+const products = document.querySelectorAll(".product-card");
+const noResults = document.getElementById("noResults");
 
-if (searchInput) {
+function filterProducts() {
 
-    searchInput.addEventListener("keyup", () => {
+    const search = searchInput.value.toLowerCase().trim();
 
-        const value =
-            searchInput.value.toLowerCase();
+    let found = 0;
 
-        document
-            .querySelectorAll(".product")
-            .forEach(product => {
+    products.forEach(product => {
 
-                const text =
-                    product.innerText.toLowerCase();
+        const keywords = product.dataset.search.toLowerCase();
 
-                product.style.display =
-                    text.includes(value)
-                    ? "block"
-                    : "none";
+        if (keywords.includes(search)) {
 
-            });
+            product.style.display = "block";
+            product.style.border = "2px solid #E8A3B5";
+            found++;
+
+        } else {
+
+            product.style.display = "none";
+
+        }
 
     });
 
+    if (search === "") {
+
+        products.forEach(product => {
+
+            product.style.display = "block";
+            product.style.border = "1px solid #eee";
+
+        });
+
+    }
+
+    noResults.style.display =
+        (found === 0 && search !== "") ? "block" : "none";
+
 }
+
+searchInput.addEventListener("input", filterProducts);
+
+clearBtn.addEventListener("click", () => {
+
+    searchInput.value = "";
+
+    filterProducts();
+
+});
 
 function filterProducts(category) {
 
