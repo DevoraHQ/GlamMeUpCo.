@@ -19,6 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
         function filterProducts() {
 
             const products = document.querySelectorAll(".product-card");
+            const noResults = document.getElementById("noResults");
+
+            if (!searchInput) return;
+
             const value = searchInput.value.toLowerCase().trim();
 
             let found = 0;
@@ -26,8 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
             products.forEach(product => {
 
                 const keywords = product.dataset.search || "";
-
-                if (keywords.toLowerCase().includes(value)) {
+        
+                if (value === "" || keywords.toLowerCase().includes(value)) {
                     product.style.display = "block";
                     found++;
                 } else {
@@ -36,14 +40,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
             });
 
-            const noResults = document.getElementById("noResults");
-
             if (noResults) {
                 noResults.style.display =
                     (found === 0 && value !== "") ? "block" : "none";
             }
+
             console.log("Search value:", value);
-            console.log("Products found:", products.length);
+            console.log("Matched products:", found);
         }
 
         /* =========================
