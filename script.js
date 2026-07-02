@@ -127,17 +127,17 @@ if (toggleSearch) {
 
         if (clearBtn) {
 
-    clearBtn.addEventListener("click", () => {
+            clearBtn.addEventListener("click", () => {
 
-        searchInput.value = "";
+            searchInput.value = "";
 
-        filterProducts();
+            filterProducts();
 
-        searchInput.focus();
+            searchInput.focus();
 
-    });
+        });
 
-}
+    }
 
         /* =========================
            🛒 CART SAFE VERSION
