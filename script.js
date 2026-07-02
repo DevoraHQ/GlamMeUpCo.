@@ -18,33 +18,66 @@ document.addEventListener("DOMContentLoaded", () => {
 
         function filterProducts() {
 
-            const products = document.querySelectorAll(".product-card");
-            const noResults = document.getElementById("noResults");
+    const products = document.querySelectorAll(".product-card");
+    const suggestions = document.getElementById("searchSuggestions");
+    const value = searchInput.value.toLowerCase().trim();
 
-            if (!searchInput) return;
+    let found = 0;
 
-            const value = searchInput.value.toLowerCase().trim();
+    suggestions.innerHTML = "";
 
-            let found = 0;
+    products.forEach(product => {
 
-            products.forEach(product => {
+        const keywords = product.dataset.search || "";
+        const title = product.querySelector("h3").textContent;
 
-                const keywords = product.dataset.search || "";
-        
-                if (value === "" || keywords.toLowerCase().includes(value)) {
-                    product.style.display = "block";
-                    found++;
-                } else {
-                    product.style.display = "none";
-                }
+        if (value === "" || keywords.toLowerCase().includes(value)) {
 
-            });
+            product.style.display = "block";
 
-            if (noResults) {
-                noResults.style.display =
-                    (found === 0 && value !== "") ? "block" : "none";
+            found++;
+
+            if(value !== ""){
+
+                const item = document.createElement("div");
+
+                item.textContent = title;
+
+                item.onclick = () => {
+
+                    window.location.href =
+                    "search.html?search=" +
+                    encodeURIComponent(title);
+
+                };
+
+                suggestions.appendChild(item);
+
             }
 
+        } else {
+
+            product.style.display = "none";
+
+        }
+
+    });
+
+    suggestions.style.display =
+        (value !== "" && found > 0) ? "block" : "none";
+
+    const noResults = document.getElementById("noResults");
+
+    if(noResults){
+
+        noResults.style.display =
+            (found === 0 && value !== "")
+            ? "block"
+            : "none";
+
+    }
+
+}
             console.log("Search value:", value);
             console.log("Matched products:", found);
         }
