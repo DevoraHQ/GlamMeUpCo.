@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.getElementById("searchInput");
     const clearBtn = document.getElementById("clearSearch");
     const products = document.querySelectorAll(".product-card");
-    alert("Products found: " + products.length);
     const noResults = document.getElementById("noResults");
    
     function filterProducts() {
