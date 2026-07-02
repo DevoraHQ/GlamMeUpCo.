@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const products = document.querySelectorAll(".product-card");
     const suggestions = document.getElementById("searchSuggestions");
+    
+    if (!searchInput) return;
+            
     const value = searchInput.value.toLowerCase().trim();
 
     let found = 0;
@@ -76,11 +79,11 @@ document.addEventListener("DOMContentLoaded", () => {
             : "none";
 
     }
+    // ✅ DEBUG (safe inside function)
+    console.log("Search value:", value);
+    console.log("Matched products:", found);
 
 }
-            console.log("Search value:", value);
-            console.log("Matched products:", found);
-        }
 
         /* =========================
            EVENTS
