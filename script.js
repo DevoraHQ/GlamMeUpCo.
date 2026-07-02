@@ -42,6 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 noResults.style.display =
                     (found === 0 && value !== "") ? "block" : "none";
             }
+            console.log("Search value:", value);
+            console.log("Products found:", products.length);
         }
 
         /* =========================
