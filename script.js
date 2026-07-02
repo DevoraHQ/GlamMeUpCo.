@@ -1,4 +1,3 @@
-alert("JS IS WORKING");
 document.addEventListener("DOMContentLoaded", () => {
 
     try {
