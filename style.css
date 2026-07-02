@@ -883,57 +883,29 @@ section {
 
 .search-wrapper{
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
-.search-toggle{
-    background: none;
-    border: none;
-    font-size: 22px;
-    cursor: pointer;
-}
-
-.search-box{
-
-    display: none;
-
-    align-items: center;
-
-    gap: 8px;
-
-    margin-top: 10px;
-
-    background: white;
-
-    padding: 10px;
-
-    border: 1px solid #ddd;
-
-    border-radius: 10px;
-
-}
-
-.search-box input{
-
-    flex: 1;
-
-    border: none;
-
-    outline: none;
-
-    font-size: 15px;
-
-}
-
+/* SVG buttons */
+.search-toggle,
 .search-box button{
-
     background: none;
-
     border: none;
-
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
 
-    font-size: 18px;
-
+/* hidden search box */
+.search-box{
+    display: none;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
 }
 
 .search-box button:hover{
