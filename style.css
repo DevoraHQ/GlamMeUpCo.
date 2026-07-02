@@ -25,27 +25,12 @@ h1,h2,h3{
 font-family:'Cormorant Garamond',serif;
 
 }
-
 .navbar{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-padding:25px 8%;
-
-background:white;
-
-position:sticky;
-
-top:0;
-
-z-index:1000;
-
-box-shadow:0 5px 20px rgba(0,0,0,.05);
-
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    flex-wrap: wrap;
 }
 
 .logo{
