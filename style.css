@@ -880,6 +880,62 @@ section {
 .newsletter-box button:hover{
     background:#333;
 }
+
+.search-wrapper{
+    position: relative;
+}
+
+.search-toggle{
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.search-box{
+
+    display: none;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 10px;
+
+    background: white;
+
+    padding: 10px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+}
+
+.search-box input{
+
+    flex: 1;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 15px;
+
+}
+
+.search-box button{
+
+    background: none;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+}
+
 .search-box{
     position: relative;
     display: flex;
@@ -955,6 +1011,7 @@ section {
     display: flex;
     flex-direction: column;
 }
+
 .bottom-nav{
     display: none;
 }
