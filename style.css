@@ -857,15 +857,18 @@ section {
     position: absolute;
     top: 100%;
     left: 0;
-    right: 0;
-    
-    background: #fff;
-    width:280px;
-    border:1px solid #ddd;
-    border-radius:10px;
-    margin-top:5px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.1);
-    display:none;
+
+    width: 100%;
+
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    margin-top: 5px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+
+    display: none;
     z-index: 9999;
 }
 
@@ -877,4 +880,9 @@ section {
 
 .search-suggestions div:hover{
     background:#f7f7f7;
+}
+.search-wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
