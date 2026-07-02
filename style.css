@@ -49,14 +49,28 @@ box-shadow:0 5px 20px rgba(0,0,0,.05);
 }
 
 .logo{
-
-font-size:32px;
-
-font-weight:700;
-
-letter-spacing:4px;
-
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    white-space: nowrap;
 }
+@media (max-width: 1024px) {
+    .logo{
+        font-size: 24px;
+        letter-spacing: 3px;
+    }
+}@media (max-width: 768px) {
+    .logo{
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+}@media (max-width: 480px) {
+    .logo{
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+}
+
 
 .nav-links{
 
