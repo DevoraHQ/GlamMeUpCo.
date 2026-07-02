@@ -32,21 +32,32 @@ GLAM ME UP CO
 </div>
 
 <div class="search-wrapper">
-    <div class="search-box">
+
+    <!-- Navbar Search Icon -->
+    <button id="toggleSearch" class="search-toggle">
+        🔍
+    </button>
+
+    <!-- Hidden Search Box -->
+    <div class="search-box" id="searchBox">
 
         <input
             type="text"
             id="searchInput"
             placeholder="Search dresses, gowns, two-piece...">
 
-        <button id="clearSearch" type="button">✕</button>
+        <button id="searchBtn" type="button">
+            🔍
+        </button>
 
-        <button id="searchBtn" type="button">🔍</button>
+        <button id="clearSearch" type="button">
+            ✕
+        </button>
 
     </div>
-    
+
     <div id="searchSuggestions" class="search-suggestions"></div>
-    
+
 </div>
     
 <ul class="nav-links">
