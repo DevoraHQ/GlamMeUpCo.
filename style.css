@@ -32,7 +32,64 @@ font-family:'Cormorant Garamond',serif;
     padding: 15px 30px;
     flex-wrap: wrap;
 }
+.logo{
+    flex: 1;
+}
 
+.search-box{
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links{
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.cart-icon{
+    flex: 0.5;
+    display: flex;
+    justify-content: flex-end;
+}
+@media (max-width: 1024px) {
+
+    .navbar{
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .search-box{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-links{
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .cart-icon{
+        justify-content: center;
+    }
+}
+@media (max-width: 480px) {
+
+    .logo{
+        font-size: 18px;
+    }
+
+    .search-box input{
+        width: 160px;
+    }
+
+    .nav-links{
+        flex-direction: column;
+        gap: 8px;
+    }
+}
 .logo{
     font-size: 32px;
     font-weight: 700;
