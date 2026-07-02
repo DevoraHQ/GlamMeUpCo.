@@ -88,23 +88,14 @@ const toggleSearch = document.getElementById("toggleSearch");
 const searchBox = document.getElementById("searchBox");
 
 if (toggleSearch) {
-
     toggleSearch.addEventListener("click", () => {
+        searchBox.style.display =
+            searchBox.style.display === "flex" ? "none" : "flex";
 
         if (searchBox.style.display === "flex") {
-
-            searchBox.style.display = "none";
-
-        } else {
-
-            searchBox.style.display = "flex";
-
             searchInput.focus();
-
         }
-
     });
-
 }
 
         /* =========================
