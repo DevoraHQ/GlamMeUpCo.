@@ -852,3 +852,24 @@ section {
     color:#777;
     font-style:italic;
 }
+.search-suggestions{
+    position:absolute;
+    background:#fff;
+    width:280px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    margin-top:5px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    display:none;
+    z-index:1000;
+}
+
+.search-suggestions div{
+    padding:12px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.search-suggestions div:hover{
+    background:#f7f7f7;
+}
