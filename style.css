@@ -28,18 +28,21 @@ font-family:'Cormorant Garamond',serif;
 .navbar{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 15px 30px;
-    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 15px 20px;
 }
 .logo{
-    flex: 1;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    white-space: nowrap;
+    margin-right: auto;
 }
-
 .search-box{
-    flex: 2;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 
 .nav-links{
@@ -49,52 +52,45 @@ font-family:'Cormorant Garamond',serif;
     gap: 20px;
 }
 .cart-icon{
-    flex: 0.5;
+    margin-left: auto;
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
 }
 @media (max-width: 1024px) {
 
     .navbar{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .logo{
+        margin-right: 0;
+        font-size: 24px;
+    }
+
+    .cart-icon{
+        margin-left: 0;
+    }
+}
+@media (max-width: 480px) {
+
+    .navbar{
         flex-direction: column;
         gap: 10px;
-        text-align: center;
     }
 
     .search-box{
         width: 100%;
         justify-content: center;
     }
-
-    .nav-links{
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .cart-icon{
-        justify-content: center;
-    }
-}
-@media (max-width: 480px) {
-
-    .logo{
-        font-size: 18px;
-    }
-
-    .search-box input{
-        width: 160px;
-    }
-
-    .nav-links{
-        flex-direction: column;
-        gap: 8px;
-    }
 }
 .logo{
     font-size: 32px;
     font-weight: 700;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     white-space: nowrap;
+    margin-right: auto;
 }
 @media (max-width: 1024px) {
     .logo{
