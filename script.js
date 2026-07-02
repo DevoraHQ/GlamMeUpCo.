@@ -84,6 +84,28 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Matched products:", found);
 
 }
+const toggleSearch = document.getElementById("toggleSearch");
+const searchBox = document.getElementById("searchBox");
+
+if (toggleSearch) {
+
+    toggleSearch.addEventListener("click", () => {
+
+        if (searchBox.style.display === "flex") {
+
+            searchBox.style.display = "none";
+
+        } else {
+
+            searchBox.style.display = "flex";
+
+            searchInput.focus();
+
+        }
+
+    });
+
+}
 
         /* =========================
            EVENTS
@@ -104,11 +126,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (clearBtn) {
-            clearBtn.addEventListener("click", () => {
-                searchInput.value = "";
-                filterProducts();
-            });
-        }
+
+    clearBtn.addEventListener("click", () => {
+
+        searchInput.value = "";
+
+        filterProducts();
+
+        searchInput.focus();
+
+    });
+
+}
 
         /* =========================
            🛒 CART SAFE VERSION
