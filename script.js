@@ -89,12 +89,13 @@ const searchBox = document.getElementById("searchBox");
 
 if (toggleSearch) {
     toggleSearch.addEventListener("click", () => {
-        searchBox.style.display =
-            searchBox.style.display === "flex" ? "none" : "flex";
 
-        if (searchBox.style.display === "flex") {
+        searchBox.classList.toggle("active");
+
+        if (searchBox.classList.contains("active")) {
             searchInput.focus();
         }
+
     });
 }
 
