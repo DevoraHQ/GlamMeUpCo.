@@ -668,6 +668,22 @@ section {
         grid-template-columns:1fr;
     }
 }
+/* =========================
+   IPAD PORTRAIT FIX (SIGNATURE PIECES)
+   Keeps same layout as desktop
+========================= */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait){
+
+    .product-grid{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .product-card img{
+        height: 320px;
+    }
+}
 .about{
     padding:100px 8%;
     background:#FAF9F6;
@@ -1141,22 +1157,6 @@ section {
 
     .contact-section .section-title h2{
         font-size: 32px;
-    }
-}
-/* =========================
-   IPAD PORTRAIT FIX (SIGNATURE PIECES)
-   Keeps same layout as desktop
-========================= */
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait){
-
-    .product-grid{
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-    }
-
-    .product-card img{
-        height: 320px;
     }
 }
 
