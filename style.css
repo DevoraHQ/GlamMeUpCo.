@@ -138,15 +138,19 @@ font-family:'Cormorant Garamond',serif;
         margin-left: 0;
     }
 }
-@media (max-width: 480px) {
+@media(max-width: 480px){
 
     .navbar{
-        gap: 10px;
+        flex-wrap: nowrap;
+        justify-content: space-between;
     }
 
-    .search-box{
-        width: 100%;
-        justify-content: center;
+    .nav-icons{
+        gap: 8px;
+    }
+
+    .logo{
+        font-size: 18px;
     }
 
     .search-toggle svg,
