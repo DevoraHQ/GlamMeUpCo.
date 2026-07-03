@@ -87,17 +87,35 @@ document.addEventListener("DOMContentLoaded", () => {
 const toggleSearch = document.getElementById("toggleSearch");
 const searchBox = document.getElementById("searchBox");
 
-if (toggleSearch) {
-    toggleSearch.addEventListener("click", () => {
+toggleSearch.addEventListener("click", () => {
 
-        searchBox.classList.toggle("active");
+    searchBox.classList.add("active");
 
-        if (searchBox.classList.contains("active")) {
-            searchInput.focus();
-        }
+    toggleSearch.style.display = "none";
 
-    });
-}
+    searchInput.focus();
+
+});
+    document.addEventListener("click", (event) => {
+
+    const wrapper = document.querySelector(".search-wrapper");
+
+    if (
+        !wrapper.contains(event.target) &&
+        searchBox.classList.contains("active")
+    ) {
+
+        searchBox.classList.remove("active");
+
+        toggleSearch.style.display = "flex";
+
+        searchInput.value = "";
+
+        filterProducts();
+
+    }
+
+});
 
         /* =========================
            EVENTS
