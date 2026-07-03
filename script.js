@@ -100,22 +100,23 @@ toggleSearch.addEventListener("click", () => {
 
     const wrapper = document.querySelector(".search-wrapper");
 
-    if (
-        !wrapper.contains(event.target) &&
-        searchBox.classList.contains("active")
-    ) {
+if (
+    wrapper &&
+    !wrapper.contains(event.target) &&
+    searchBox.classList.contains("active")
+) {
 
-        searchBox.classList.remove("active");
+    searchBox.classList.remove("active");
+    toggleSearch.style.display = "flex";
 
-        toggleSearch.style.display = "flex";
+    searchInput.value = "";
+    filterProducts();
 
-        searchInput.value = "";
+}
+        
+const menuToggle = document.getElementById("menuToggle");
+const sideMenu = document.getElementById("sideMenu");
 
-        filterProducts();
-
-    }
-
-});
 
         /* =========================
            EVENTS
@@ -153,18 +154,15 @@ toggleSearch.addEventListener("click", () => {
            🛒 CART SAFE VERSION
         ========================== */
 
-        const cartCount = document.getElementById("cart-count");
-        let count = 0;
-
         document.querySelectorAll(".add-cart").forEach(button => {
-        button.addEventListener("click", () => {
+
+    button.addEventListener("click", () => {
 
         count++;
 
         if (cartCount) {
             cartCount.textContent = count;
 
-            // show only when items exist
             if (count > 0) {
                 cartCount.style.display = "inline";
             }
@@ -177,22 +175,31 @@ toggleSearch.addEventListener("click", () => {
         }, 1000);
 
     });
-});
-        catch (error) {
-        console.log("Script error prevented crash:", error);
-    }
 
 });
-const menuToggle = document.getElementById("menuToggle");
-const sideMenu = document.getElementById("sideMenu");
 
-menuToggle.addEventListener("click", () => {
-    sideMenu.classList.add("active");
-});
-document.addEventListener("click", (e) => {
+// <-- Close the try block
+} catch (error) {
 
-    if (!sideMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-        sideMenu.classList.remove("active");
-    }
+    console.log("Script error prevented crash:", error);
 
-});
+}
+
+if (menuToggle && sideMenu) {
+
+    menuToggle.addEventListener("click", () => {
+        sideMenu.classList.add("active");
+    });
+
+    document.addEventListener("click", (e) => {
+
+        if (
+            !sideMenu.contains(e.target) &&
+            !menuToggle.contains(e.target)
+        ) {
+            sideMenu.classList.remove("active");
+        }
+
+    });
+
+}
