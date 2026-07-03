@@ -26,8 +26,9 @@ font-family:'Cormorant Garamond',serif;
 
 }
 /* =========================
-   HEADER
+   HEADER (CLEAN SYSTEM)
 ========================= */
+
 .navbar{
     position: sticky;
     top: 0;
@@ -42,143 +43,140 @@ font-family:'Cormorant Garamond',serif;
     background: #fff;
     border-bottom: 1px solid #eee;
 
-    flex-wrap: nowrap;
+    flex-wrap: nowrap; /* IMPORTANT: prevents stacking */
 }
 
-/* LEFT */
+/* =========================
+   LOGO (LEFT SIDE)
+========================= */
+
 .logo{
     font-size: 26px;
     font-weight: 700;
     letter-spacing: 3px;
+
     white-space: nowrap;
     flex-shrink: 0;
 }
 
-/* RIGHT ICON GROUP */
+/* =========================
+   RIGHT ICON GROUP
+========================= */
+
 .nav-icons{
     display: flex;
     align-items: center;
     gap: 12px;
+
     flex-shrink: 0;
 }
 
-/* ICON BUTTONS */
+/* =========================
+   ICON BUTTONS
+========================= */
+
 .search-toggle,
 .menu-toggle,
 .cart-icon{
     background: none;
     border: none;
     cursor: pointer;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    color: #000;
+    transition: 0.3s;
 }
 
-/* MOBILE ONLY ADJUSTMENTS */
-@media(max-width:480px){
-
-    .logo{
-        font-size: 18px;
-        letter-spacing: 2px;
-    }
-
-    .nav-icons{
-        gap: 8px;
-    }
-
-    .search-toggle svg,
-    .menu-toggle svg{
-        width: 18px;
-        height: 18px;
-    }
-
+.search-toggle:hover,
+.menu-toggle:hover,
+.cart-icon:hover{
+    color: #e91e63;
 }
+
+/* =========================
+   NAV LINKS (DESKTOP)
+========================= */
+
+.nav-links{
+    display: flex;
+    list-style: none;
+    gap: 40px;
+
+    justify-content: center;
+    flex: 2;
+}
+
+.nav-links a{
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #111;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.nav-links a:hover{
+    color: #c79a6b;
+}
+
+/* =========================
+   CART
+========================= */
+
+.cart-icon{
+    font-size: 22px;
+    cursor: pointer;
+}
+
+#cart-count{
+    display: none;
+    font-size: 10px;
+    font-weight: 600;
+    margin-left: 2px;
+}
+
+/* =========================
+   MOBILE FIX (PHONE ONLY)
+   THIS FIXES YOUR ISSUE
+========================= */
 
 @media(max-width: 768px){
 
+    /* KEEP ROW LAYOUT — DO NOT STACK */
+    .navbar{
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        padding: 12px 15px;
+    }
+
     .logo{
         font-size: 20px;
+        letter-spacing: 2px;
     }
 
     .nav-icons{
         gap: 10px;
     }
-}
-.search-toggle,
-.menu-toggle,
-.cart-icon{
 
-    background:none;
-
-    border:none;
-
-    cursor:pointer;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    color:#000;
-
-    transition:.3s;
-
-}
-.search-toggle:hover,
-.menu-toggle:hover,
-.cart-icon:hover{
-
-    color:#e91e63;
-
-}
-.search-box{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.nav-links{
-    flex: 2;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-.cart-icon{
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-}
-@media (max-width: 1024px) {
-
-    .navbar{
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .logo{
-        margin-right: 0;
-        font-size: 24px;
-    }
-
-    .cart-icon{
-        margin-left: 0;
+    .nav-links{
+        display: none; /* hides desktop nav on mobile */
     }
 }
+
+/* EXTRA SMALL PHONES */
 @media(max-width: 480px){
 
-    .navbar{
-        flex-wrap: nowrap;
-        justify-content: space-between;
+    .logo{
+        font-size: 18px;
+        letter-spacing: 1px;
     }
 
     .nav-icons{
         gap: 8px;
-    }
-
-    .logo{
-        font-size: 18px;
     }
 
     .search-toggle svg,
@@ -187,112 +185,6 @@ font-family:'Cormorant Garamond',serif;
         width: 18px;
         height: 18px;
     }
-
-}
-.logo{
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    white-space: nowrap;
-    margin-right: auto;
-}
-
-@media(max-width:1100px){
-.logo{
-font-size:26px;
-}
-
-}
-@media(max-width:768px){
-.logo{
-font-size:22px;
-letter-spacing:2px;
-
-}
-.nav-icons{
-gap:15px;
-}
-
-}
-@media(max-width:480px){
-.logo{
-font-size:12px;
-letter-spacing:1px;
-
-}
-.navbar{
-padding:12px 12px;
-
-}
-.nav-icons{
-gap:8px;
-
-}
-
-}
-
-.nav-links{
-
-display:flex;
-
-list-style:none;
-
-gap:40px;
-
-}
-.nav-links a{
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-decoration: none;
-    color: black;
-    text-transform: uppercase;
-}
-.nav-links a{
-
-text-decoration:none;
-
-color:#111;
-
-font-weight:500;
-
-transition:.3s;
-
-}
-.nav-links a:hover{
-    color: #c79a6b;
-    transition: 0.3s;
-}
-@media (max-width: 1024px) {
-    .nav-links a{
-        font-size: 13px;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav-links a{
-        font-size: 12px;
-        letter-spacing: 0.5px;
-    }
-}
-
-.cart-icon{
-
-font-size:22px;
-
-cursor:pointer;
-
-}
-#cart-count{
-
-    display:none;
-
-    font-size:10px;
-
-    font-weight:600;
-
-    margin-left:2px;
-
 }
 
 .hero{
