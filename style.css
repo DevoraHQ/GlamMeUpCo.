@@ -162,41 +162,6 @@ font-size:22px;
 cursor:pointer;
 
 }
-.menu-toggle{
-    background:none;
-    border:none;
-    cursor:pointer;
-    display:flex;
-    align-items:center;
-}
-
-.side-menu{
-    position: fixed;
-    top: 0;
-    right: -250px;
-    width: 250px;
-    height: 100vh;
-    background: white;
-    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
-    padding: 80px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    transition: 0.3s ease;
-    z-index: 9999;
-}
-
-.side-menu a{
-    text-decoration: none;
-    color: black;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.side-menu.active{
-    right: 0;
-}
 
 .hero{
 
@@ -1013,6 +978,42 @@ section {
 .search-suggestions div:hover{
     background:#f7f7f7;
 }
+.menu-toggle{
+    background:none;
+    border:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+}
+
+.side-menu{
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100vh;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: 0.3s ease;
+    z-index: 9999;
+}
+
+.side-menu a{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.side-menu.active{
+    right: 0;
+}
+
 .bottom-nav{
     display: none;
 }
