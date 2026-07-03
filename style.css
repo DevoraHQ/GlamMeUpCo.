@@ -1143,6 +1143,22 @@ section {
         font-size: 32px;
     }
 }
+/* =========================
+   IPAD PORTRAIT FIX (SIGNATURE PIECES)
+   Keeps same layout as desktop
+========================= */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait){
+
+    .product-grid{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .product-card img{
+        height: 320px;
+    }
+}
 
 .bottom-nav{
     display: none;
