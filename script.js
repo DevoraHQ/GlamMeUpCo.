@@ -153,28 +153,32 @@ toggleSearch.addEventListener("click", () => {
            🛒 CART SAFE VERSION
         ========================== */
 
-        let count = 0;
         const cartCount = document.getElementById("cart-count");
+let count = 0;
 
-        document.querySelectorAll(".add-cart").forEach(btn => {
-            btn.addEventListener("click", () => {
+document.querySelectorAll(".add-cart").forEach(button => {
+    button.addEventListener("click", () => {
 
-                count++;
+        count++;
 
-                if (cartCount) {
-                    cartCount.textContent = count;
-                }
+        if (cartCount) {
+            cartCount.textContent = count;
 
-                btn.textContent = "Added ✓";
+            // show only when items exist
+            if (count > 0) {
+                cartCount.style.display = "inline";
+            }
+        }
 
-                setTimeout(() => {
-                    btn.textContent = "Add to Cart";
-                }, 1000);
+        button.textContent = "Added ✓";
 
-            });
-        });
+        setTimeout(() => {
+            button.textContent = "Add to Cart";
+        }, 1000);
 
-    } catch (error) {
+    });
+});
+        catch (error) {
         console.log("Script error prevented crash:", error);
     }
 
