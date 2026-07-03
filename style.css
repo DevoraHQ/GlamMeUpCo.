@@ -921,15 +921,7 @@ section {
 .search-box button:hover{
     background:#333;
 }
-@media(max-width:900px){
-    .search-box {
-    display: none;
-}
 
-    .search-box.active {
-    display: flex;
-    }
-}
 #noResults{
     text-align:center;
     margin-top:40px;
