@@ -154,10 +154,10 @@ toggleSearch.addEventListener("click", () => {
         ========================== */
 
         const cartCount = document.getElementById("cart-count");
-let count = 0;
+        let count = 0;
 
-document.querySelectorAll(".add-cart").forEach(button => {
-    button.addEventListener("click", () => {
+        document.querySelectorAll(".add-cart").forEach(button => {
+        button.addEventListener("click", () => {
 
         count++;
 
