@@ -1026,6 +1026,110 @@ section {
     right: 0;
 }
 
+/* =========================
+   CONTACT SECTION (LUXURY SVG VERSION)
+========================= */
+
+.contact-section{
+    padding: 100px 8%;
+    background: #FAF9F6;
+    text-align: center;
+}
+
+/* TITLE */
+.contact-section .section-title h2{
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.contact-section .section-title p{
+    color: #666;
+    margin-bottom: 50px;
+}
+
+/* GRID */
+.contact-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+/* CARD */
+.contact-card{
+    background: white;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+.contact-card:hover{
+    transform: translateY(-8px);
+}
+
+/* SVG ICON */
+.contact-card .icon{
+    width: 30px;
+    height: 30px;
+    margin-bottom: 15px;
+    stroke: currentColor;
+    color: #111;
+}
+
+/* TITLE INSIDE CARD */
+.contact-card h3{
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+/* DESCRIPTION */
+.contact-card p{
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* BUTTON LINK */
+.contact-card a{
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid black;
+    border-radius: 30px;
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    transition: 0.3s ease;
+}
+
+.contact-card a:hover{
+    background: black;
+    color: white;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* TABLET */
+@media(max-width: 900px){
+    .contact-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* PHONE */
+@media(max-width: 600px){
+    .contact-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .contact-section .section-title h2{
+        font-size: 32px;
+    }
+}
+
 .bottom-nav{
     display: none;
 }
