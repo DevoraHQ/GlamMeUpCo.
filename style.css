@@ -25,30 +25,40 @@ h1,h2,h3{
 font-family:'Cormorant Garamond',serif;
 
 }
+/* =========================
+   HEADER
+========================= */
+
 .navbar{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 15px 20px;
-}
-.nav-icons{
-    display: flex;
     align-items: center;
-    gap: 15px;
-}
-.navbar{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 25px;
-    padding: 15px 20px;
+
+    padding: 18px 40px;
+
+    background: #fff;
+
+    border-bottom: 1px solid #eee;
 }
 .logo{
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    white-space: nowrap;
-    margin-right: auto;
+
+    font-size:28px;
+    font-weight:700;
+    letter-spacing:4px;
+    white-space:nowrap;
+}
+.nav-icons{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:22px;
+
 }
 @media(max-width: 768px){
 
@@ -59,6 +69,35 @@ font-family:'Cormorant Garamond',serif;
     .nav-icons{
         gap: 10px;
     }
+}
+.search-toggle,
+.menu-toggle,
+.cart-icon{
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#000;
+
+    transition:.3s;
+
+}
+
+.search-toggle:hover,
+.menu-toggle:hover,
+.cart-icon:hover{
+
+    color:#e91e63;
+
 }
 .search-box{
     display: flex;
@@ -113,21 +152,39 @@ font-family:'Cormorant Garamond',serif;
     white-space: nowrap;
     margin-right: auto;
 }
-@media (max-width: 1024px) {
-    .logo{
-        font-size: 24px;
-        letter-spacing: 3px;
-    }
-}@media (max-width: 768px) {
-    .logo{
-        font-size: 20px;
-        letter-spacing: 2px;
-    }
-}@media (max-width: 480px) {
-    .logo{
-        font-size: 16px;
-        letter-spacing: 1px;
-    }
+
+@media(max-width:1100px){
+.logo{
+font-size:26px;
+}
+
+}
+@media(max-width:768px){
+.logo{
+font-size:22px;
+letter-spacing:2px;
+
+}
+.nav-icons{
+gap:15px;
+}
+
+}
+@media(max-width:480px){
+.logo{
+font-size:18px;
+letter-spacing:1px;
+
+}
+.navbar{
+padding:15px;
+
+}
+.nav-icons{
+gap:12px;
+
+}
+
 }
 
 .nav-links{
@@ -183,14 +240,15 @@ cursor:pointer;
 
 }
 #cart-count{
-    font-size: 11px;
-    font-weight: 500;
-    margin-left: 3px;
-    color: black;
-    opacity: 0.7;
-}
-#cart-count{
-    display: none;
+
+    display:none;
+
+    font-size:10px;
+
+    font-weight:600;
+
+    margin-left:2px;
+
 }
 
 .hero{
@@ -1007,13 +1065,6 @@ section {
 
 .search-suggestions div:hover{
     background:#f7f7f7;
-}
-.menu-toggle{
-    background:none;
-    border:none;
-    cursor:pointer;
-    display:flex;
-    align-items:center;
 }
 
 .side-menu{
