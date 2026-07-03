@@ -904,24 +904,45 @@ section {
 .search-box{
     display: none;
     align-items: center;
-    gap: 8px;
-    margin-top: 10px;
-}
-.search-box{
-    display: none;
-    align-items: center;
-    gap: 8px;
-    margin-top: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding: 6px 12px;
+    width: 320px;
 }
 
 .search-box.active{
     display: flex;
 }
-
 .search-box button:hover{
     background:#333;
 }
+.search-box input{
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background: transparent;
+}
+.search-actions{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.search-actions button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    padding: 4px;
+}
 
+.search-actions button:hover{
+    color: #e91e63;
+}
 #noResults{
     text-align:center;
     margin-top:40px;
