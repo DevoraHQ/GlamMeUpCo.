@@ -864,18 +864,18 @@ section {
 .booking-form button:hover{
     background:#333;
 }
-.section-title{
+#consultation .section-title{
     text-align: center;
     margin-bottom: 40px;
 }
 
-.section-title h2{
+#consultation .section-title h2{
     font-size: 48px;
     margin-bottom: 10px;
 }
 
-.section-title p{
-    color: #666;
+#consultation .section-title p{
+    color: #666;s
     font-size: 16px;
 }
 .newsletter{
