@@ -218,6 +218,23 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         
         });
+        const cartIcon = document.getElementById("cartIcon");
+        const cartPanel = document.getElementById("cartPanel");
+        const cartOverlay = document.getElementById("cartOverlay");
+        
+        if (cartIcon && cartPanel && cartOverlay) {
+        
+            cartIcon.addEventListener("click", () => {
+                cartPanel.classList.add("open");
+                cartOverlay.classList.add("active");
+            });
+        
+            cartOverlay.addEventListener("click", () => {
+                cartPanel.classList.remove("open");
+                cartOverlay.classList.remove("active");
+            });
+        
+        }
         
         // Initial UI load
         updateCartUI();
