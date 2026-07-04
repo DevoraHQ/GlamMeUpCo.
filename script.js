@@ -127,14 +127,35 @@ const sideMenu = document.getElementById("sideMenu");
 
             searchInput.addEventListener("keypress", (e) => {
                 if (e.key === "Enter") {
-                    filterProducts();
+
+                    const value = searchInput.value.trim();
+                
+                    if (value !== "") {
+                
+                        window.location.href =
+                            "search.html?search=" +
+                            encodeURIComponent(value);
+                
+                    }
+                
                 }
             });
         }
 
         if (searchBtn) {
-            searchBtn.addEventListener("click", filterProducts);
-        }
+            searchBtn.addEventListener("click", () => {
+
+                const value = searchInput.value.trim();
+            
+                if (value !== "") {
+            
+                    window.location.href =
+                        "search.html?search=" +
+                        encodeURIComponent(value);
+            
+                }
+            
+            });
 
         if (clearBtn) {
 
