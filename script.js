@@ -150,35 +150,77 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
         }
-
         /* =========================
-           🛒 CART SYSTEM
-        ========================== */
-
+           🛒 CART SYSTEM (UPGRADED)
+        ========================= */
+        
         const cartCount = document.getElementById("cart-count");
-        let count = 0;
-
+        
+        // Load cart from storage or start empty
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        
+        // Save cart helper
+        function saveCart() {
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartUI();
+        }
+        
+        // Update cart number
+        function updateCartUI() {
+        
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        
+            if (cartCount) {
+                cartCount.textContent = totalItems;
+        
+                // Only show when items exist
+                cartCount.style.display = totalItems > 0 ? "inline" : "none";
+            }
+        }
+        
+        // Add product to cart
+        function addToCart(productName, price) {
+        
+            const existing = cart.find(item => item.name === productName);
+        
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({
+                    name: productName,
+                    price: price,
+                    quantity: 1
+                });
+            }
+        
+            saveCart();
+        }
+        
+        // Attach to buttons
         document.querySelectorAll(".add-cart").forEach(button => {
-
-            button.addEventListener("click", () => {
-
-                count++;
-
-                if (cartCount) {
-                    cartCount.textContent = count;
-                    cartCount.style.display = count > 0 ? "inline" : "none";
-                }
-
+        
+            button.addEventListener("click", (e) => {
+        
+                const card = e.target.closest(".product-card");
+        
+                const name = card.querySelector("h3").textContent;
+                const priceText = card.querySelector(".price").textContent;
+                const price = parseFloat(priceText.replace("£", ""));
+        
+                addToCart(name, price);
+        
                 button.textContent = "Added ✓";
-
+        
                 setTimeout(() => {
                     button.textContent = "Add to Cart";
                 }, 1000);
-
+        
             });
-
+        
         });
-
+        
+        // Initial UI load
+        updateCartUI();
         /* =========================
            🍔 MENU SYSTEM
         ========================== */
