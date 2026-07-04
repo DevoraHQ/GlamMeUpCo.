@@ -1,225 +1,212 @@
 document.addEventListener("DOMContentLoaded", () => {
+
     try {
 
         /* =========================
            🌟 WELCOME MESSAGE
         ========================== */
-
         alert("Welcome to GLAM ME UP CO");
 
         /* =========================
-           🔍 SEARCH
+           🔍 SEARCH SYSTEM
         ========================== */
 
         const searchInput = document.getElementById("searchInput");
         const clearBtn = document.getElementById("clearSearch");
         const searchBtn = document.getElementById("searchBtn");
+        const toggleSearch = document.getElementById("toggleSearch");
+        const searchBox = document.getElementById("searchBox");
+        const suggestions = document.getElementById("searchSuggestions");
+
+        function goToSearchPage(value) {
+            if (!value) return;
+
+            window.location.href =
+                "search.html?search=" + encodeURIComponent(value);
+        }
 
         function filterProducts() {
 
-    const products = document.querySelectorAll(".product-card");
-    const suggestions = document.getElementById("searchSuggestions");
-    
-    if (!searchInput) return;
-            
-    const value = searchInput.value.toLowerCase().trim();
+            if (!searchInput) return;
 
-    let found = 0;
+            const products = document.querySelectorAll(".product-card");
+            const value = searchInput.value.toLowerCase().trim();
 
-    suggestions.innerHTML = "";
+            let found = 0;
 
-    products.forEach(product => {
+            if (suggestions) suggestions.innerHTML = "";
 
-        const keywords = product.dataset.search || "";
-        const title = product.querySelector("h3").textContent;
+            products.forEach(product => {
 
-        if (value === "" || keywords.toLowerCase().includes(value)) {
+                const keywords = product.dataset.search || "";
+                const title = product.querySelector("h3")?.textContent || "";
 
-            product.style.display = "block";
+                const match = keywords.toLowerCase().includes(value);
 
-            found++;
+                if (value === "" || match) {
 
-            if(value !== ""){
+                    product.style.display = "block";
+                    found++;
 
-                const item = document.createElement("div");
+                    if (value !== "" && suggestions) {
 
-                item.textContent = title;
+                        const item = document.createElement("div");
+                        item.textContent = title;
 
-                item.onclick = () => {
+                        item.addEventListener("click", () => {
+                            goToSearchPage(title);
+                        });
 
-                    window.location.href =
-                    "search.html?search=" +
-                    encodeURIComponent(title);
+                        suggestions.appendChild(item);
+                    }
 
-                };
+                } else {
+                    product.style.display = "none";
+                }
 
-                suggestions.appendChild(item);
+            });
 
+            if (suggestions) {
+                suggestions.style.display =
+                    (value !== "" && found > 0) ? "block" : "none";
             }
 
-        } else {
+            const noResults = document.getElementById("noResults");
 
-            product.style.display = "none";
+            if (noResults) {
+                noResults.style.display =
+                    (found === 0 && value !== "") ? "block" : "none";
+            }
+        }
+
+        /* =========================
+           🔍 SEARCH ICON TOGGLE
+        ========================== */
+
+        if (toggleSearch && searchBox) {
+
+            toggleSearch.addEventListener("click", () => {
+                searchBox.classList.add("active");
+                toggleSearch.style.display = "none";
+
+                if (searchInput) searchInput.focus();
+            });
 
         }
 
-    });
+        /* click outside search closes it */
+        document.addEventListener("click", (event) => {
 
-    suggestions.style.display =
-        (value !== "" && found > 0) ? "block" : "none";
+            const wrapper = document.querySelector(".search-wrapper");
 
-    const noResults = document.getElementById("noResults");
+            if (
+                wrapper &&
+                searchBox &&
+                searchBox.classList.contains("active") &&
+                !wrapper.contains(event.target)
+            ) {
 
-    if(noResults){
+                searchBox.classList.remove("active");
 
-        noResults.style.display =
-            (found === 0 && value !== "")
-            ? "block"
-            : "none";
+                if (toggleSearch) toggleSearch.style.display = "flex";
 
-    }
-    // ✅ DEBUG (safe inside function)
-    console.log("Search value:", value);
-    console.log("Matched products:", found);
+                if (searchInput) searchInput.value = "";
 
-}
-const toggleSearch = document.getElementById("toggleSearch");
-const searchBox = document.getElementById("searchBox");
-
-toggleSearch.addEventListener("click", () => {
-
-    searchBox.classList.add("active");
-
-    toggleSearch.style.display = "none";
-
-    searchInput.focus();
-
-});
-    document.addEventListener("click", (event) => {
-
-    const wrapper = document.querySelector(".search-wrapper");
-
-if (
-    wrapper &&
-    !wrapper.contains(event.target) &&
-    searchBox.classList.contains("active")
-) {
-
-    searchBox.classList.remove("active");
-    toggleSearch.style.display = "flex";
-
-    searchInput.value = "";
-    filterProducts();
-
-}
-        
-const menuToggle = document.getElementById("menuToggle");
-const sideMenu = document.getElementById("sideMenu");
-
+                filterProducts();
+            }
+        });
 
         /* =========================
-           EVENTS
+           🔘 SEARCH EVENTS
         ========================== */
 
         if (searchInput) {
+
             searchInput.addEventListener("input", filterProducts);
 
             searchInput.addEventListener("keypress", (e) => {
-                if (e.key === "Enter") {
 
-                    const value = searchInput.value.trim();
-                
-                    if (value !== "") {
-                
-                        window.location.href =
-                            "search.html?search=" +
-                            encodeURIComponent(value);
-                
-                    }
-                
+                if (e.key === "Enter") {
+                    goToSearchPage(searchInput.value.trim());
                 }
+
             });
         }
 
         if (searchBtn) {
             searchBtn.addEventListener("click", () => {
-
-                const value = searchInput.value.trim();
-            
-                if (value !== "") {
-            
-                    window.location.href =
-                        "search.html?search=" +
-                        encodeURIComponent(value);
-            
-                }
-            
+                goToSearchPage(searchInput.value.trim());
             });
+        }
 
         if (clearBtn) {
 
             clearBtn.addEventListener("click", () => {
 
-            searchInput.value = "";
+                searchInput.value = "";
+                filterProducts();
+                searchInput.focus();
 
-            filterProducts();
+            });
 
-            searchInput.focus();
-
-        });
-
-    }
+        }
 
         /* =========================
-           🛒 CART SAFE VERSION
+           🛒 CART SYSTEM
         ========================== */
+
+        const cartCount = document.getElementById("cart-count");
+        let count = 0;
 
         document.querySelectorAll(".add-cart").forEach(button => {
 
-    button.addEventListener("click", () => {
+            button.addEventListener("click", () => {
 
-        count++;
+                count++;
 
-        if (cartCount) {
-            cartCount.textContent = count;
+                if (cartCount) {
+                    cartCount.textContent = count;
+                    cartCount.style.display = count > 0 ? "inline" : "none";
+                }
 
-            if (count > 0) {
-                cartCount.style.display = "inline";
-            }
+                button.textContent = "Added ✓";
+
+                setTimeout(() => {
+                    button.textContent = "Add to Cart";
+                }, 1000);
+
+            });
+
+        });
+
+        /* =========================
+           🍔 MENU SYSTEM
+        ========================== */
+
+        const menuToggle = document.getElementById("menuToggle");
+        const sideMenu = document.getElementById("sideMenu");
+
+        if (menuToggle && sideMenu) {
+
+            menuToggle.addEventListener("click", () => {
+                sideMenu.classList.add("active");
+            });
+
+            document.addEventListener("click", (e) => {
+
+                if (
+                    !sideMenu.contains(e.target) &&
+                    !menuToggle.contains(e.target)
+                ) {
+                    sideMenu.classList.remove("active");
+                }
+
+            });
+
         }
 
-        button.textContent = "Added ✓";
-
-        setTimeout(() => {
-            button.textContent = "Add to Cart";
-        }, 1000);
-
-    });
+    } catch (error) {
+        console.log("Script error prevented crash:", error);
+    }
 
 });
-
-// <-- Close the try block
-} catch (error) {
-
-    console.log("Script error prevented crash:", error);
-
-}
-
-if (menuToggle && sideMenu) {
-
-    menuToggle.addEventListener("click", () => {
-        sideMenu.classList.add("active");
-    });
-
-    document.addEventListener("click", (e) => {
-
-        if (
-            !sideMenu.contains(e.target) &&
-            !menuToggle.contains(e.target)
-        ) {
-            sideMenu.classList.remove("active");
-        }
-
-    });
-
-}
