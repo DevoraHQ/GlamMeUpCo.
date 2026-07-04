@@ -218,6 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         
         });
+        
         const cartIcon = document.getElementById("cartIcon");
         const cartPanel = document.getElementById("cartPanel");
         const cartOverlay = document.getElementById("cartOverlay");
