@@ -238,6 +238,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         // Initial UI load
         updateCartUI();
+        
         /* =========================
            🍔 MENU SYSTEM
         ========================== */
