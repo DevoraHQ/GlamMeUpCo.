@@ -77,3 +77,4 @@ count.textContent =
 if (matches === 0) {
     noResults.style.display = "block";
 }
+
