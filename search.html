@@ -25,29 +25,65 @@
 
     </header>
 
-    <!-- Search Results -->
+  <!-- Search Results -->
 
-    <section class="signature">
+<section id="shop" class="signature">
 
-        <div class="section-title">
+    <div class="section-title">
 
-            <h2 id="searchHeading">
-                Search Results
-            </h2>
+        <h2 id="searchHeading">
+            Search Results
+        </h2>
 
-            <p id="resultCount"></p>
+        <p id="resultCount"></p>
 
-        </div>
+    </div>
 
-        <div class="product-grid" id="searchResults">
 
-        </div>
+    <!-- Category Filter -->
 
-        <p id="noResults" style="display:none;">
-            No products found.
-        </p>
+    <div class="category-filter">
 
-    </section>
+        <button class="category-btn active" data-category="all">
+            All
+        </button>
+
+        <button class="category-btn" data-category="dress">
+            Dresses
+        </button>
+
+        <button class="category-btn" data-category="two-piece">
+            Two-Piece Sets
+        </button>
+
+        <button class="category-btn" data-category="ready">
+            Ready-to-Wear
+        </button>
+
+        <button class="category-btn" data-category="ankara">
+            Ankara
+        </button>
+
+        <button class="category-btn" data-category="custom">
+            Custom/Bespoke
+        </button>
+
+    </div>
+
+
+    <!-- Products -->
+
+    <div class="product-grid" id="searchResults">
+
+    </div>
+
+
+    <p id="noResults" style="display:none;">
+        No products found.
+    </p>
+
+
+</section>
 
     <script src="search.js"></script>
 
