@@ -147,26 +147,41 @@ font-family:'Cormorant Garamond',serif;
     visibility:visible;
 
 }
+/* =========================
+   CART ICON + COUNT
+========================= */
+
+.cart-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+.cart-icon svg {
+    display: block;
+}
+
+
 #cart-count {
 
     display: none;
 
     position: absolute;
 
-    right: 2px;
+    top: 12px;
+    right: 7px;
 
-    bottom: 2px;
-
-    font-size: 9px;
-
+    font-size: 8px;
     font-weight: 700;
 
     color: black;
 
     line-height: 1;
 
-    z-index: 2;
-
+    z-index: 5;
 }
 
 .cart-panel{
