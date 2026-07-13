@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 cartCount.textContent = totalItems;
         
                 // Only show when items exist
-                cartCount.style.display = totalItems > 0 ? "inline" : "none";
+                cartCount.style.display = totalItems > 0 ? "flex" : "none";
             }
         }
         
