@@ -144,6 +144,7 @@ font-family:'Cormorant Garamond',serif;
 .cart-overlay.active{
 
     opacity:1;
+    visibility:visible;
 }
 
 .cart-icon {
