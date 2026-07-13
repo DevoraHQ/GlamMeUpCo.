@@ -147,37 +147,26 @@ font-family:'Cormorant Garamond',serif;
     visibility:visible;
 }
 
-.cart-icon {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-
-.cart-icon svg {
-    display: block;
-}
-
-
 #cart-count {
 
-    display: none;
-
-    position: absolute;
-
-    top: 12px;
-    right: 7px;
-
-    font-size: 8px;
-    font-weight: 700;
-
-    color: black;
+    font-size: 10px;
+    font-weight: 600;
 
     line-height: 1;
 
-    z-index: 5;
+    margin-left: 3px;
+    margin-top: 6px; /* moves the number down */
+
+    min-width: 14px;
+    height: 14px;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    color: black;
+
 }
 
 .cart-panel{
